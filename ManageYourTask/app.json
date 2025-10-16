@@ -1,19 +1,15 @@
 {
   "expo": {
-    "name": "StickerSmash",
-    "slug": "StickerSmash",
+    "name": "ManageYourTask",
+    "slug": "ManageYourTask",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "stickersmash",
+    "scheme": "manageyourtask",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.anh22706331.StickerSmash",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -23,8 +19,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.anh22706331.StickerSmash"
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
@@ -48,13 +43,6 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "afb5100c-71d6-47ac-9689-1e94d3acbd45"
-      }
-    },
-    "owner": "anh22706331"
+    }
   }
 }
