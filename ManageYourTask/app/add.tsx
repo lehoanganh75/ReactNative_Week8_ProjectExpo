@@ -7,10 +7,9 @@ import {
   TextInput,
   Image,
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter , useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-
 const UserProfileImage = () => {
   const avatarUrl =
     'https://res.cloudinary.com/ddga6y6tm/image/upload/v1741178088/avatar_rlr5jl.png';
@@ -20,20 +19,15 @@ const UserProfileImage = () => {
 export default function AddScreen() {
   const router = useRouter();
   const [task, setTask] = useState('');
+  const params = useLocalSearchParams();
+  const userName = params.userName || 'Guest'; 
 
-  const handleFinish = () => {
-    if (task.trim() !== '') {
-      console.log('Adding new task:', task);
-      alert('Task added successfully!');
-      router.back(); 
-    } else {
-      alert('Please enter a task.');
-    }
+  const handleFinish = async () => {
+
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      {/* Header Section */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="#000" />
@@ -41,7 +35,7 @@ export default function AddScreen() {
         <View style={styles.userInfo}>
           <UserProfileImage />
           <View style={styles.textContainer}>
-            <Text style={styles.greeting}>Hi Twinkle</Text>
+            <Text style={styles.greeting}>Hi {userName}</Text>
             <Text style={styles.subtitle}>Have a grate day a head</Text>
           </View>
         </View>
@@ -49,7 +43,6 @@ export default function AddScreen() {
 
       <View style={styles.mainContent}>
         <Text style={styles.heading}>ADD YOUR JOB</Text>
-
         <View style={styles.inputContainer}>
           <Ionicons name="document-text-outline" size={20} color="#06b6d4" />
           <TextInput
@@ -77,7 +70,6 @@ export default function AddScreen() {
     </SafeAreaView>
   );
 }
-
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
